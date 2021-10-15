@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name = "viewModel"
+            type = "kr.ac.jbnu.moonlader.home.models.HomeViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:fitsSystemWindows="true"
+        tools:context = ".home.View.HomeView">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.cardview.widget.CardView
+            android:id = "@+id/logoView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_top">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_appstore" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id = "@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text = "@string/app_name"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="18sp"
+            android:textColor="@color/titleColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoView"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_title"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <ImageView
+            android:id = "@+id/ic_gold"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_goldcup"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_title"/>
+
+        <TextView
+            android:id = "@+id/user_1st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@{viewModel.rankList.get(1).nickName ?? @string/empty}"
+            android:textColor = "@color/white"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/guideline_title"
+            app:layout_constraintStart_toEndOf="@id/ic_gold"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id = "@+id/score_1st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@{viewModel.rankList.get(1).score ?? @string/empty}"
+            android:textColor = "@color/white"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@id/user_1st"
+            app:layout_constraintStart_toEndOf="@id/ic_gold"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id = "@+id/ic_silver"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_silvercup"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/ic_gold"/>
+
+        <TextView
+            android:id = "@+id/user_2nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text = "@{viewModel.rankList.get(2).nickName ?? @string/empty}"
+            android:textColor = "@color/white"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/score_1st"
+            app:layout_constraintStart_toEndOf="@id/ic_silver"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id = "@+id/score_2nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@{viewModel.rankList.get(2).score ?? @string/empty}"
+            android:textColor = "@color/white"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@id/user_2nd"
+            app:layout_constraintStart_toEndOf="@id/ic_silver"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id = "@+id/ic_bronze"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_bronzecup"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/ic_silver"/>
+
+        <TextView
+            android:id = "@+id/user_3rd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text = "@{viewModel.rankList.get(3).nickName ?? @string/empty}"
+            android:textColor = "@color/white"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/ic_silver"
+            app:layout_constraintStart_toEndOf="@id/ic_bronze"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id = "@+id/score_3rd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@{viewModel.rankList.get(3).score ?? @string/empty}"
+            android:textColor = "@color/white"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@id/user_3rd"
+            app:layout_constraintStart_toEndOf="@id/ic_gold"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

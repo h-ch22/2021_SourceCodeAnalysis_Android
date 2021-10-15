@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name = "viewModel"
+            type = "kr.ac.jbnu.moonlader.userManagement.models.SignInViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:fitsSystemWindows="true"
+        tools:context = ".userManagement.View.SignInView">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.cardview.widget.CardView
+            android:id = "@+id/logoView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_top">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_appstore" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id = "@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text = "@string/app_name"
+            android:fontFamily="@font/maplestory_bold"
+            android:textSize="18sp"
+            android:textColor="@color/titleColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoView"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_title"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <EditText
+            android:id = "@+id/field_email"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="20dp"
+            android:drawableStart="@drawable/ic_user"
+            android:drawableTint="@color/color_textfield"
+            android:drawablePadding="10dp"
+            android:layout_marginVertical="20dp"
+            android:elevation="20dp"
+            android:textColor="@color/color_textfield"
+            android:background="@drawable/shape_textfield"
+            android:text = "@={viewModel.field_email}"
+            app:layout_constraintTop_toBottomOf="@id/guideline_title"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"/>
+
+        <EditText
+            android:id = "@+id/field_password"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:hint="@string/txt_password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="20dp"
+            android:drawableStart="@drawable/ic_password"
+            android:drawableTint="@color/color_textfield"
+            android:drawablePadding="10dp"
+            android:layout_marginVertical="20dp"
+            android:elevation="20dp"
+            android:textColor="@color/color_textfield"
+            android:background="@drawable/shape_textfield"
+            android:text = "@={viewModel.field_password}"
+            app:layout_constraintTop_toBottomOf="@id/field_email"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id = "@+id/btn_signIn"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_textfield"
+            app:backgroundTint="@color/gray"
+            android:text="@string/txt_signIn"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawableTint="@color/white"
+            android:layout_marginTop="60dp"
+            android:elevation="20dp"
+            android:onClick = "@{(v) -> viewModel.onButtonClick(v)}"
+            app:layout_constraintTop_toBottomOf="@id/guideline_mid"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id = "@+id/btn_signUp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:text="@string/txt_register"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawableTint="@color/white"
+            android:background="@drawable/shape_textfield"
+            android:layout_marginTop="20dp"
+            android:elevation="20dp"
+            android:onClick = "@{(v) -> viewModel.onButtonClick(v)}"
+            app:layout_constraintTop_toBottomOf="@id/btn_signIn"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

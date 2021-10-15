@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "523556923564",
+    "project_id": "moonlader-4a071",
+    "storage_bucket": "moonlader-4a071.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523556923564:android:7cf355d1e780d393f15709",
+        "android_client_info": {
+          "package_name": "kr.ac.jbnu.moonlader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523556923564-f59qjldcdjhllnskjhkl5pnevfe18fh2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.jbnu.moonlader",
+            "certificate_hash": "31a4b2b420296f8e8e90c59aa41fe3b136b52555"
+          }
+        },
+        {
+          "client_id": "523556923564-bug9i7jeikvc28d8mttaan32l3ou59mp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6S05TNoXcTTTs0NVpmn2v7wYSIA0QFG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523556923564-bug9i7jeikvc28d8mttaan32l3ou59mp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523556923564-2bvhva8cunpg26p0h5t1tdmi6sen8g09.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.ac.jbnu.MoonLader"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

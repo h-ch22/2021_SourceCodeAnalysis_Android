@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id = "@+id/action_home"
+        android:title = "@string/txt_home"
+        android:icon = "@drawable/ic_home_48"/>
+
+    <item
+        android:id = "@+id/action_controller"
+        android:title = "@string/txt_controller"
+        android:icon = "@drawable/baseline_sports_esports_black_48"/>
+
+    <item
+        android:id = "@+id/action_more"
+        android:title = "@string/txt_more"
+        android:icon = "@drawable/baseline_more_horiz_black_48"/>
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent">#FFFAB933</color>
+    <color name="accentVarient">#FFD49619</color>
+    <color name="background">#FF1E143D</color>
+    <color name="btn_dark">#FF40403F</color>
+    <color name="btnColor">#FFFFFFFF</color>
+    <color name="txt_dark">#FFFFFFFF</color>
+    <color name="txtColor">#FF303030</color>
+    <color name="titleColor">#FFFFFFFF</color>
+    <color name="gray">#FFBCBDBE</color>
+</resources>
